@@ -2,5 +2,5 @@
 	
 <?php
 
-	$connect=mysqli_connect("localhost","root","","blog") or die("connectin Failed");
+	$connect=mysqli_connect("localhost","root","","php_blog") or die("connectin Failed");
 ?>

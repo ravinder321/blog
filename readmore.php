@@ -6,6 +6,10 @@
     if (isset($_GET['id'])) 
     {
         $post=$obb->readmore($_GET['id']);
+        if ($post) {
+            $obb->addveiw($_GET['id'],1); // Increment the views
+            // ... rest of your code to display the blog
+        }
     } 
     else 
     {
@@ -41,7 +45,7 @@
             </div>
             <div class="button-container">
                 <a href="index.php" class="back-btn">Back to Home</a>
-                <a href="comment.php?id=<?php echo $post['id']; ?>" class="comment-btn">Comment Section</a>
+                <a href="comment.php?id=<?php echo $post['blog_id']; ?>" class="comment-btn">Comment Section</a>
                 <div class="share-container">
                     <button type="button" class="share-button"
                         onclick="document.getElementById('share-buttons').style.display = (document.getElementById('share-buttons').style.display === 'none' || document.getElementById('share-buttons').style.display === '') ? 'block' : 'none';">

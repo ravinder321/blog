@@ -3,8 +3,8 @@ $connect = mysqli_connect("localhost", "root", "", "blog") or die("Connection Fa
 require_once 'vendor/autoload.php';
 
 // Google API Client Setup
-$clientID = '64314456129-kiegnarsrahj46h830n9pfg86oqbgu4e.apps.googleusercontent.com';
-$clientSecret = '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';
+$clientID = '64314456129-0qucs91iasmkj4jipo7c2mrr8q67gdeg.apps.googleusercontent.com';
+$clientSecret = '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';
 $redirectUri = 'http://localhost/blog/index.php';
 
 $client = new Google_Client();
@@ -25,9 +25,14 @@ if (isset($_GET['code'])) {
         $google_account_info = $google_oauth->userinfo->get();
         $name = $google_account_info['name'];
         $email = $google_account_info['email'];
+        $id = $google_account_info['id'];
 
         $_SESSION['name'] = $name;
         $_SESSION['email'] = $email;
+        $_SESSION['user_data'] = $google_account_info;
+        $_SESSION['uid'] = 2;
+        $_SESSION['role'] = 'user';
+        
 
         // Check if the user already exists
         $query = "SELECT * FROM signup WHERE email = ?";

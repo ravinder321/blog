@@ -160,7 +160,7 @@ nav ul li a:hover {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.sidebar ul li a i {
+.sidebar ul li a  {
     margin-right: 10px; /* Space between icon and text */
     font-size: 1.2em;
 }
@@ -183,7 +183,24 @@ nav ul li a:hover {
     }
 }
 
+/*pagination section*/
+.pagination {
+    margin: 20px 0;
+}
 
+.pagination-link {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pagination-link.active {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
 /* Main Content */
 .content {
     width: 80%;
